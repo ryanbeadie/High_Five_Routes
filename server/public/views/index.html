@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Routing Magic!</title>
+    <link rel="stylesheet" href="/styles/syles.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css" />
+    <script src="/vendor/angular.min.js" type="text/javascript"></script>
+    <script src="/vendor/angular-route.min.js" type="text/javascript"></script>
+    <script src="/scripts/client.js" type="text/javascript"></script>
+    <script src="scripts/clickRndNumber-service.js" type="text/javascript"></script>
+    <base href="/">
+  </head>
+  <body ng-app="myApp">
+      <div class = "jumbotron">
+        <h1>High Five Me Mother!</h1>
+      </div>
+      <a href="/secondHighFive"></a>
+      <div ng-controller = "HighFiveController as ic">
+        <button class="refresh" ng-click='ic.refresh()'>Refresh</button>
+      <div class = "container col-lg-offsett-1 col-lg-3 col-sm-offset-1 col-sm-3">
+          <h3>Name: Borat</h3>
+          <h3>From: 15 years ago when he was funny</h3>
+          <br>
+          <button ng-click='ic.clickRandomNumber()'>Click For Skill Level</button>
+          <br> <br>
+          <h4>Your High5 Skill Level= {{ic.clRndNum}}</h4>
+          <h4>{{ic.prompt}}</h4>
+      </div>
+      <div class = "container col-lg-6 col-sm-6">
+        <img src="{{ic.picture}}" />
+          <button ng-click='ic.boratRandomNumber()'>Click For My Level</button>
+        <br><br>
+        <h4>My High5 Skill Level= {{ic.randomNumber}}</h4>
+        <h2>{{ic.result}}</h2>
+        <p>Time You've Out Fived Me = {{ic.counter}}</p>
+    </div>
+    <ng-view></ng-view>
+  </div>
+  </body>
+</html>
